@@ -11,7 +11,7 @@ This is the client app, and binds to a remote service in the PayZ app, and fetch
 
 **[Analytics app module](https://github.com/gabriel-rajadurai/PayZ-Interview-Assignment-/tree/main/analytics)**
 
-This is the server app. It exposes AnalyticsService, and returns the AIDL implementation when bound by a client app.
+This is the server app. It has no UI and just exposes AnalyticsService. The service returns the AIDL implementation when bound by a client app.
 
 **[Analytics Interface module](https://github.com/gabriel-rajadurai/PayZ-Interview-Assignment-/tree/main/analyticsInterface)**
 
