@@ -11,7 +11,11 @@
         <service
             android:name=".AnalyticsService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.gabriel.analytics.BIND_ANALYTICS_SERVICE" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
