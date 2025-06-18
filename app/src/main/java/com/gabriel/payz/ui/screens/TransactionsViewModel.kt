@@ -15,10 +15,6 @@ class TransactionsViewModel @Inject constructor(
     private val analyticsService: AnalyticsService
 ) : ViewModel() {
 
-    init {
-        analyticsService.connectService()
-    }
-
     val transactionInProgress = MutableStateFlow(false)
 
     fun completeTransaction() {

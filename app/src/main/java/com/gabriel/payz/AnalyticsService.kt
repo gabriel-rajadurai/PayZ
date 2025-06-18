@@ -15,6 +15,7 @@ import javax.inject.Singleton
 class AnalyticsService @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
+
     var analyticsInterface: IAnalyticsInterface? = null
         private set
 
@@ -26,6 +27,7 @@ class AnalyticsService @Inject constructor(
 
         override fun onServiceDisconnected(name: ComponentName?) {
             Log.d(TAG, "Analytics service connected ")
+            analyticsInterface = null
         }
     }
 

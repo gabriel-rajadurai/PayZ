@@ -12,6 +12,8 @@ appcompat = "1.7.0"
 material = "1.12.0"
 hilt-android = "2.52"
 hilt-navigation-compose = "1.2.0"
+workmanager = "2.10.1"
+hilt-workmanager = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +35,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt-android" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+workmanager-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workmanager" }
+hilt-workmanager = { module = "androidx.hilt:hilt-work", version.ref = "hilt-workmanager" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

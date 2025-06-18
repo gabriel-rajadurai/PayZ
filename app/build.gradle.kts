@@ -57,6 +57,9 @@ dependencies {
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
+    implementation(libs.workmanager.ktx)
+    implementation(libs.hilt.workmanager)
+
     implementation(project(":analyticsInterface"))
 
     testImplementation(libs.junit)
