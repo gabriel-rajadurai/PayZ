@@ -4,8 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class AnalyticsStats(
-    val memoryUsage: MemoryUsage,
-    val batteryLevel: BatteryInfo,
-    val cpuUsage: Long
+data class MemoryUsage(
+    private val availMem: Long,
+    private val totalMem: Long,
+    private val lowMemory: Boolean
 ) : Parcelable

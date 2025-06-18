@@ -4,6 +4,9 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
+import com.gabriel.analytics.utils.getBatteryLevel
+import com.gabriel.analytics.utils.getCpuUsage
+import com.gabriel.analytics.utils.getMemoryUsage
 import com.gabriel.analyticsinterface.AnalyticsStats
 import com.gabriel.analyticsinterface.IAnalyticsInterface
 
@@ -13,7 +16,9 @@ class AnalyticsService : Service() {
         object : IAnalyticsInterface.Stub() {
             override fun getCurrentStats(): AnalyticsStats {
                 return AnalyticsStats(
-                    100 //hardcoding for now to test the IPC setup
+                    memoryUsage = getMemoryUsage(),
+                    batteryLevel = getBatteryLevel(),
+                    cpuUsage = getCpuUsage()
                 )
             }
         }
@@ -25,7 +30,7 @@ class AnalyticsService : Service() {
         binder.linkToDeath(
             {
                 Log.d(TAG, "Service Killed")
-            },0
+            }, 0
         )
         return binder
     }
