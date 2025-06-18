@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "PayZ"
 include(":app")
 include(":analytics")
+include(":analyticsInterface")
