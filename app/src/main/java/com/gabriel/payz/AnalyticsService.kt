@@ -59,11 +59,6 @@ class AnalyticsService @Inject constructor(
                     cleanUpAndResume()
                 }
 
-                override fun onNullBinding(name: ComponentName?) {
-                    Log.d(TAG, "Null binding $name")
-                    cleanUpAndResume()
-                }
-
                 private fun cleanUpAndResume() {
                     analyticsInterface = null
                     isConnected = false

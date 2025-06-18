@@ -6,6 +6,8 @@
         <package android:name="com.gabriel.analytics" />
     </queries>
 
+    <uses-permission android:name="com.gabriel.analytics.READ_ANALYTICS" />
+
     <application
         android:name=".PayZApp"
         android:allowBackup="true"

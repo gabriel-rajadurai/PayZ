@@ -2,6 +2,7 @@ package com.gabriel.analytics
 
 import android.app.Service
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.IBinder
 import android.util.Log
 import com.gabriel.analytics.utils.getBatteryLevel
@@ -42,5 +43,6 @@ class AnalyticsService : Service() {
 
     companion object {
         private const val TAG = "AnalyticsService"
+        private const val READ_ANALYTICS_PERMISSION = "com.gabriel.analytics.READ_ANALYTICS"
     }
 }

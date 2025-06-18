@@ -21,6 +21,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            keyAlias = "payz"
+            keyPassword = "123456"
+            storeFile = file("../signature.jks")
+            storePassword = "123456"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -28,6 +37,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
