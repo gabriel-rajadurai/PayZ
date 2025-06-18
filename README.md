@@ -1,3 +1,7 @@
+**V1.0.0**
+
+You can find the binaries in the [releases](https://github.com/gabriel-rajadurai/PayZ/releases/tag/v1.0.0)
+
 **Project Structure**
 
 3 modules
