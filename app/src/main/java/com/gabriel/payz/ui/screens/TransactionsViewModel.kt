@@ -18,17 +18,17 @@ class TransactionsViewModel @Inject constructor(
     val transactionInProgress = MutableStateFlow(false)
 
     fun completeTransaction() {
-        transactionInProgress.value = true //reset previous state
-        logStats("Pre Transaction")
         viewModelScope.launch {
+            transactionInProgress.value = true //reset previous state
+            logStats("Pre Transaction")
             delay(2000) //simulate an API call
             transactionInProgress.value = false
             logStats("Post Transaction")
         }
     }
 
-    private fun logStats(state: String) {
-        val currentStats = analyticsService.analyticsInterface?.currentStats
+    private suspend fun logStats(state: String) {
+        val currentStats = analyticsService.getAnalyticsInterface()?.currentStats
         Log.d(TAG, "$state, current stats => $currentStats")
     }
 

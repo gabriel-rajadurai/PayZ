@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.workmanager.ktx)
     implementation(libs.hilt.workmanager)
 
+    implementation(libs.kotlinx.coroutines.android)
+
     implementation(project(":analyticsInterface"))
 
     testImplementation(libs.junit)

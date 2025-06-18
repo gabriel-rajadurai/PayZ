@@ -21,7 +21,7 @@ class ScheduledMaintenanceWorker @AssistedInject constructor(
 ) : CoroutineWorker(context, params) {
 
     override suspend fun doWork(): Result {
-        val currentStats = analyticsService.analyticsInterface?.currentStats
+        val currentStats = analyticsService.getAnalyticsInterface()?.currentStats
         Log.d(TAG, "Maintenance, current stats => $currentStats")
         return Result.success()
     }
