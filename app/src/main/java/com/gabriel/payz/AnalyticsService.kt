@@ -26,10 +26,12 @@ class AnalyticsService @Inject constructor(
     private var isConnected = true
     private val mutex = Mutex()
 
+    //Returns the instance of AIDL interface if service connected, or bind to service and then returns
     suspend fun getAnalyticsInterface(): IAnalyticsInterface? {
         if (isConnected && analyticsInterface != null) {
             return analyticsInterface
         }
+        //Using mutex to prevent multiple calls to bind with service
         return mutex.withLock {
             withTimeoutOrNull(TIMEOUT_MILLIS, {
                 createInterface()
@@ -37,6 +39,7 @@ class AnalyticsService @Inject constructor(
         }
     }
 
+    //Bind to Analytics service and gracefully handle service disconnection and binder deaths
     private suspend fun createInterface(): IAnalyticsInterface? =
         suspendCancellableCoroutine { continuation ->
             val serviceConnection = object : ServiceConnection {

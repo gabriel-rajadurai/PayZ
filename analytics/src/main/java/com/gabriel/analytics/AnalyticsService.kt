@@ -28,6 +28,7 @@ class AnalyticsService : Service() {
     override fun onBind(intent: Intent): IBinder? {
         Log.d(TAG, "Service bound")
         val binder = analyticsInterface.asBinder()
+        //This ensures the service is unbound when the binder is killed
         binder.linkToDeath(
             {
                 Log.d(TAG, "Service Killed")

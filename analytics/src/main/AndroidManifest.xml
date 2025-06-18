@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PayZ">
+
+        <!--HAVE SKIPPED the PROCESS TAG, as the analytics app itself is a separate process.-->
+        <!--android:process=":analytics"-->
         <service
             android:name=".AnalyticsService"
             android:exported="true"
